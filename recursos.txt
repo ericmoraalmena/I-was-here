@@ -1,0 +1,97 @@
+Link para redimensionar imagenes recordar fondo es 1280x720, recuadro gris 520x720
+https://www.iloveimg.com/es/redimensionar-imagen#resize-options,pixels
+
+# imagen de centro
+pygame.draw.rect(screen, RED, (490, 300, 300, 300), border_radius=20)
+  
+  #saber la posicion del mouse
+  #mouse_pos = pygame.mouse.get_pos()
+  #print(mouse_pos)
+
+coordenadas para los textos de respuesta en los recuadros: izquierda (430, 425), derecha (675, 425)
+
+# saltos de linea ------------------------------------------------------------------------------------ No sabemos como pero funciona
+
+def renderizar_texto_con_saltos(texto, posicion):
+    lineas = texto.split('\n')  # Divide el texto en líneas en cada salto de línea
+    y = posicion[1]  # Posición vertical inicial
+    for linea in lineas:
+        texto_renderizado = fuente.render(linea, True, NEGRO)  # Renderiza la línea
+        pantalla.blit(texto_renderizado, (posicion[0], y))  # Dibuja la línea
+        y += texto_renderizado.get_height() # Incrementa la posición vertical para la siguiente línea
+                elif indice_pregunta == : # va a la pregunta 
+                    print(r)
+                    indice_pregunta =
+
+https://www.youtube.com/watch?v=GMBqjxcKogA
+
+pygame input
+https://www.pygame.org/project-Pygame+Text+Input-3013-.html
+https://github.com/Nearoo/pygame-text-input?tab=readme-ov-file
+
+crear ejecutable 
+pyinstaller --onefile --noconsole --icon=img/logo/logo.ico --name=I_Was_Here workbench_I.py
+
+ver videos crear 
+pip3 install moviePy
+
+
+
+
+Hacer texto en pantalla en NEGRO
+import pygame
+import sys
+
+# Inicializar Pygame
+pygame.init()
+
+# Definir el tamaño de la pantalla
+ANCHO, ALTO = 800, 600
+pantalla = pygame.display.set_mode((ANCHO, ALTO))
+pygame.display.set_caption("Juego con pantalla negra")
+
+# Definir colores
+NEGRO = (0, 0, 0)
+BLANCO = (255, 255, 255)
+
+# Función principal del juego
+def main():
+    
+    pixel_menu_x = 430
+    pixel_menu_y = 450
+    
+    text_pos_p_continuar= (pixel_menu_x, pixel_menu_y)
+    
+    pixel_menu2_x = 430
+    pixel_menu2_y = 480
+    
+    text_pos_p_continuar2= (pixel_menu2_x, pixel_menu2_y)
+    
+    while True:
+        pantalla.fill(NEGRO)
+        fuente_p = pygame.font.Font("fuentes/gamefont.otf", 70)
+        
+        text_p_continuar = fuente_p.render("pulsa A o >-- para", True, BLANCO)
+        text_rect_p_continuar = text_p_continuar.get_rect(center=text_pos_p_continuar)
+        
+        pantalla.blit(text_p_continuar, text_rect_p_continuar)
+        
+        text_p_continuar2 = fuente_p.render("la opción 1", True, BLANCO)
+        text_rect_p_continuar2 = text_p_continuar2.get_rect(center=text_pos_p_continuar2)
+        
+        pantalla.blit(text_p_continuar2, text_rect_p_continuar2)
+        # Manejo de eventos
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+        # Actualizar pantalla
+        
+        pygame.display.flip()
+
+# Llamar a la función principal
+if __name__ == "__main__":
+    main()
+
+
